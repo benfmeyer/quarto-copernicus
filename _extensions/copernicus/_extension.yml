@@ -26,24 +26,23 @@ contributes:
       biblio-style: copernicus
       cite-method: natbib
       # Set this below (`biblio-config: false`) if your cls already load a bst file
-      # biblio-config: false
+      biblio-config: false
       # Content to add in header that your format is using
       header-includes: |
-        \usepackage{orcidlink}
-        \definecolor{mypink}{RGB}{219, 48, 122}
         \usepackage[inline]{trackchanges}
       template-partials:
         # Add here the partials your format is using
         - "partials/title.tex"
-        - "partials/_authors.tex"
+        - "partials/before-bib.tex"
+        - "partials/biblio.tex"
+        - "partials/before-body.tex"
+        - "partials/citations.tex"
+        - "partials/doc-class.tex"
       format-resources:
         # Add here the resources required for the PDF rendering
         - copernicus.cls
         - copernicus.bst
-    html:
-      # define default configuration for the html version of your format
-      number-sections: true
-      toc: true
-      theme: custom.scss
-      # Use a CSL file to style (https://www.zotero.org/styles/)
-      csl: https://www.zotero.org/styles/journal-of-institutional-and-theoretical-economics
+        - trackchanges.sty
+        - copernicus.cfg
+        - pdfscreencop.sty
+    
