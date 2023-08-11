@@ -7,16 +7,31 @@ $-- Customize is needed, like below for printing the authors. Otherwise remove t
 $-- %%%%%%%%%%%%%%%%
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{$title$}
 $endif$
-$if(subtitle)$
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{$subtitle$}
+
+$for(author)$
+\Author[$author.affiliation$]{$author.given_name$}{$author.surname$}
+$endfor$
+
+
+$for(affiliation)$
+\affil[$affiliation.code$]{$affiliation.address$}
+$endfor$
+
+\runningtitle{$running.title$}
+
+\runningauthor{$running.author$}
+
+$if(correspongdingauthors)$
+\correspondence{$correspongdingauthors$}
+$else$
+
+$for(author)$
+$if(author.corresponding)$
+\correspondence{$author.given_name$\ $author.surname$\ ($author.email$)}
 $endif$
-\author{${ by-author:_authors.tex()[\and ] }}
-\date{$date$}
+$endfor$
+
+$endif$
+
