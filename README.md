@@ -1,53 +1,22 @@
-# Article Format Template (AFT)
+# Copernicus Article Template
 
-<!-- REMOVE THIS IN YOUR FORMAT TEMPLATE -->
-> Template for creating a new journal article format for Quarto. 
->
-> This repository is a [Github Repository Template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that you should use as a starter to create a new extension format. Click on the "Use this template" button at the top !
->
-> See information about how-to use this repo template inside the template file or its rendered version at <https://quarto-journals.github.io/article-format-template/>
+Port of `rticles::copernicus_article()` to Quarto. This extension will create documents for Copernicus journals. 
 
-<!-- ALL THE BELOW SHOULD BE IN YOUR README -->
+# Creating new articles
 
-This is a Quarto template that assists you in creating a manuscript for Article Format Template journals. You can learn more about ...
+You can use this as a template to create articles for Copernicus journals. To use an empty template use:
 
-## Creating a New Article
+`quarto use template benfmeyer/copernicus-quarto`
 
-You can use this as a template to create an article for an AFT journal. To do this, use the following command:
+# Installation in existing document
 
-```bash
-quarto use template quarto-journals/article-format-template
-```
+To use this template with an existing Quarto document use:
 
-This will install the extension and create an example qmd file and bibiography that you can use as a starting place for your article.
+`quarto add benfmeyer/copernicus-quarto`
 
-## Installation For Existing Document
+# Usage
 
-You may also use this format with an existing Quarto project or document. From the quarto project or document directory, run the following command to install this format:
+To use the Copernicus format in your document add `format: copernicus-pdf` to your YAML. Currently, this only compiles using `pdflatex`. The default used by Quarto is `xelatex`, so, be sure to set `pdf-engine: pdflatex` in the YAML.
 
-```bash
-quarto add quarto-journals/article-format-template
-```
 
-## Usage
 
-To use the format, you can use the format names `aft-pdf` and `aft-html`. For example:
-
-```bash
-quarto render article.qmd --to aft-pdf
-```
-
-or in your document yaml
-
-```yaml
-format:
-  pdf: default
-  aft-pdf:
-    keep-tex: true    
-```
-
-You can view a preview of the rendered template at <https://quarto-journals.github.io/article-format-template/>.
-
-## Format Options
-
-This format does not have specific format option. Include documentation of such option otherwise. See <https://github.com/quarto-journals/elsevier#format-options> for an example.
