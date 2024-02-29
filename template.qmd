@@ -159,7 +159,7 @@ Read [@Feynman1963118], and [see @Dirac1953888].
 # Content section with R code chunks
 
 ```{r}
-#| echo = FALSE
+#| echo: FALSE
 sum <- 1 + 41
 ```
 
@@ -203,9 +203,9 @@ When figures and tables are placed at the end of the MS (article in one-column s
 Include a 12cm width figure of Nikolaus Copernicus from [Wikipedia](https://en.wikipedia.org/wiki/File:Nikolaus_Kopernikus.jpg) with caption using R Markdown.
 
 ```{r} 
-#| out.width = "8.3cm"
-#| echo = FALSE
-#| fig.cap = "one column figure"
+#| out.width: "8.3cm"
+#| echo: FALSE
+#| fig.cap: "one column figure"
 knitr::include_graphics("Nikolaus_Kopernikus.jpg")
 ```
 
@@ -214,9 +214,9 @@ knitr::include_graphics("Nikolaus_Kopernikus.jpg")
 You can also include a larger figure.
 
 ```{r}
-#| out.width = "12cm"
-#| echo = FALSE
-#| fig.cap = "two column figure"
+#| out.width: "12cm"
+#| echo: FALSE
+#| fig.cap: "two column figure"
 knitr::include_graphics("Nikolaus_Kopernikus.jpg")
 ```
 
@@ -319,8 +319,8 @@ $$
 If you want to use algorithms, you need to make sure yourself that the \LaTeX packages `algorithms` and `algorithmicx` are installed so that `algorithm.sty` respectively `algorithmic.sty` can be loaded by the Copernicus template. Both need to be available through your preferred \LaTeX{} distribution. With TinyTeX (or TeX Live), you can do so by running `tinytex::tlmgr_install(c("algorithms", "algorithmicx"))`
 
 ```{r} 
-#| echo = FALSE
-#| eval = tinytex::is_tinytex()
+#| echo: FALSE
+#| message: false
 tinytex::tlmgr_install(c("algorithms", "algorithmicx"))
 ```
 
