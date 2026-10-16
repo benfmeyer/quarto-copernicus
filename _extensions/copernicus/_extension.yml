@@ -38,6 +38,7 @@ contributes:
         - "partials/before-body.tex"
         - "partials/citations.tex"
         - "partials/doc-class.tex"
+        - "partials/fonts.latex"
       format-resources:
         # Add here the resources required for the PDF rendering
         - copernicus.cls

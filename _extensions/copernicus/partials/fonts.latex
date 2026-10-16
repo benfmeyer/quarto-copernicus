@@ -1,0 +1,4 @@
+$if(mainfont)$
+\usepackage{fontspec}
+$endif$
+

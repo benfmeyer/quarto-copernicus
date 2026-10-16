@@ -11,7 +11,7 @@ $if(title)$
 $endif$
 
 $for(author)$
-\Author[$author.affiliation$]{$author.given_name$}{$author.surname$}
+\Author[$author.affiliation$]$if(author.corresponding)$[$author.email$]$endif${$author.given_name$}{$author.surname$}
 $endfor$
 
 
